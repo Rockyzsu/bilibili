@@ -23,7 +23,7 @@ class SQLite():
 
     def create_table(self):
         create_sql = 'create table if not exists tb_download (url varchar(100),status tinyint,crawltime datetime)'
-        create_record_tb = 'create table if not exists tb_record (idx varchar(100),start tinyint,end tinyint,status tinyint)'
+        create_record_tb = 'create table if not exists tb_record (idx varchar(100) PRIMARY KEY,start tinyint,end tinyint,status tinyint)'
         self.cursor.execute(create_record_tb)
         self.conn.commit()
         self.cursor.execute(create_sql)

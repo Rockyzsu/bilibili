@@ -8,7 +8,7 @@ import fire
 # start=args[2]
 # end=args[3]
 
-def main(id,start,end):
+def update_data(id,start,end):
     status=0
     conn = sqlite3.connect('history.db')
     cursor = conn.cursor()
@@ -24,4 +24,4 @@ def main(id,start,end):
         print("successfully insert")
 
 if __name__ == '__main__':
-    fire.Fire(main)
+    fire.Fire(update_data)
